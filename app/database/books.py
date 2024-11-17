@@ -7,4 +7,4 @@ def get_all():
     FROM books
     ORDER BY title;
     """
-    return common.select_query(query, 'DictCursor')
+    return common.select_query(query)

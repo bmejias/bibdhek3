@@ -19,7 +19,7 @@ def get_db_connection(cursor_type='default'):
     return cursor, conn
 
 
-def select_query(query, cursor_type='default'):
+def select_query(query, cursor_type='DictCursor'):
     cursor, conn = get_db_connection(cursor_type)
     cursor.execute(query)
     rows = cursor.fetchall()

@@ -9,4 +9,4 @@ def get_all():
         JOIN groups g ON gu.group_id = g.id
     ORDER BY u.first_name, u.last_name;
     """
-    return common.select_query(query, 'DictCursor')
+    return common.select_query(query)

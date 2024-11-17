@@ -3,7 +3,7 @@ from . import common
 
 def get_all():
     query = "SELECT * FROM loans;"
-    return common.select_query(query, 'DictCursor')
+    return common.select_query(query)
 
 
 def get_open_loans():
@@ -26,4 +26,4 @@ def get_open_loans():
     WHERE l.status='lent'
     ORDER BY b.title;
     """
-    return common.select_query(query, 'DictCursor')
+    return common.select_query(query)
