@@ -1,4 +1,3 @@
-from . import books
-from . import users
+from . import books, users, loans
 
-__all__ = ["books", "users"]
+__all__ = ["books", "users", "loans"]

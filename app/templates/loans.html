@@ -1,1 +1,27 @@
 {% extends 'base.html' %}
+
+{% block title %}Bib D'Hek - Loans{% endblock %}
+
+{% block content %}
+<h1>Loans</h1>
+<div class="container">
+    <div>
+        <ul>
+        {% for loan in loans %}
+            <li>
+            <button class="btn btn-primary btn-xs">
+                Return
+            </button>
+            <button class="btn btn-warning btn-xs">
+                Extend
+            </button>
+            {{ loan.date_return }} -
+            {{ loan.title }} - <em>{{ loan.author }}</em>
+            <strong>{{ loan.first_name }} {{ loan.last_name }}</strong>
+            ({{ loan.class }})
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

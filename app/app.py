@@ -13,7 +13,8 @@ def books():
 
 @app.route('/loans')
 def loans():
-    return render_template('loans.html')
+    loans = db.loans.get_open_loans()
+    return render_template('loans.html', loans=loans)
 
 @app.route('/users')
 def users():
