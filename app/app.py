@@ -17,7 +17,8 @@ def loans():
 
 @app.route('/users')
 def users():
-    return render_template('users.html')
+    users = db.users.get_all()
+    return render_template('users.html', users=users)
 
 @app.route('/add_book')
 def add_book():
