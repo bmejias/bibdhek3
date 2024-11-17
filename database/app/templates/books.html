@@ -1,1 +1,16 @@
 {% extends 'base.html' %}
+
+{% block title %}Bib D'Hek - Books{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div>
+        <!-- missing serch bar here -->
+        <ul>
+            {% for book in books %}
+            <li>{{ book.title }} - <em>{{ book.author }}</em></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
