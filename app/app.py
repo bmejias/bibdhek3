@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 
-from database import Database
+import database as db
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('BIBDHEK_KEY')
