@@ -7,8 +7,4 @@ def get_all():
     FROM books
     ORDER BY title;
     """
-    cursor, conn = common.get_db_connection('DictCursor')
-    cursor.execute(query)
-    books = cursor.fetchall()
-    cursor.close()
-    return books
+    return common.select_query(query, 'DictCursor')

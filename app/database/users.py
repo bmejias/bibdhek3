@@ -9,8 +9,4 @@ def get_all():
         JOIN groups g ON gu.group_id = g.id
     ORDER BY u.first_name, u.last_name;
     """
-    cursor, conn = common.get_db_connection('DictCursor')
-    cursor.execute(query)
-    users = cursor.fetchall()
-    cursor.close()
-    return users
+    return common.select_query(query, 'DictCursor')

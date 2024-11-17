@@ -18,3 +18,11 @@ def get_db_connection(cursor_type='default'):
         raise Exception("ERROR: Invalid cursor type", cursor_type)
     return cursor, conn
 
+
+def select_query(query, cursor_type='default'):
+    cursor, conn = get_db_connection(cursor_type)
+    cursor.execute(query)
+    rows = cursor.fetchall()
+    cursor.close()
+    conn.close()
+    return rows
