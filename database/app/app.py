@@ -1,12 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 
+from database import Database
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.getenv('BIBDHEK_KEY')
 
 @app.route('/books')
 def books():
-    return render_template('books.html')
+    books = db.books.get_all()
+    return render_template('books.html', books=books)
 
 @app.route('/loans')
 def loans():
