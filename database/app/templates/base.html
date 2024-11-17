@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="wdth=device-width, initial-scale=1.0">
+    <title>{% block title %}Bib D'Hek{% endblock %}</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Bib D'Hek</a>
+            </div>
+            <!-- <div class="collapse navbar-collapse" id="main-navbar"> -->
+            <div>
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="{{ url_for('books') }}">Books</a></li>
+                    <li><a href="{{ url_for('users') }}">Users</a></li>
+                    <li><a href="{{ url_for('loans') }}">Loans</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('add_book') }}">Add Book</a></li>
+                    <li><a href="{{ url_for('add_user') }}">Add User</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+    <!-- Maybe add footer here -->
+</body>
+</html>
+

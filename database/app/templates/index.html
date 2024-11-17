@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Bib D'Hek{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron">
+        <h2>Bib D'Hek</h2>
+        <p>
+        <div class="text-center">
+            <a class="btn btn-primary" role="button" href="{{ url_for('books') }}">Books</a>
+            <a class="btn btn-primary" role="button" href="{{ url_for('users') }}">Users</a>
+            <a class="btn btn-primary" role="button" href="{{ url_for('loans') }}">Loans</a>
+        </div>
+        </p>
+        <p>
+        <div class="text-center">
+            <a class="btn btn-info" role="button" href="{{ url_for('add_book') }}">Add Book</a>
+            <a class="btn btn-info" role="button" href="{{ url_for('add_user') }}">Add User</a>
+        </div>
+        </p>
+    </div>
+</div>
+{% endblock %}
